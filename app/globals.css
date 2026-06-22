@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-navy-deep: oklch(14.5% 0.046 253.9);      /* #0A1628 - Core Canvas & Rich Backdrops */
+  --color-navy-brand: oklch(29.8% 0.096 254.5);     /* #1B3A6B - Structural Panels & Deep Anchors */
+  --color-blue-electric: oklch(62.8% 0.25 250.3);   /* #1E90FF - High-Conversion CTAs & Primary Focus */
+  --color-blue-ocean: oklch(74.9% 0.21 230.1);      /* #00BFFF - Secondary Highlights, Badges & Hovers */
+  --color-ice-white: oklch(96.8% 0.015 240.2);      /* #F0F8FF - Soft Light Sections & Card Textures */
+  --color-pure-white: oklch(100% 0 0);              /* #FFFFFF - High Contrast Text Overlays */
+  --color-gold-accent: oklch(72.4% 0.15 84.5);      /* #C9A227 - Premium Trust Badges (Use Sparingly) */
+  
+  --font-display: 'Barlow Condensed', var(--font-sans), sans-serif;
+  --font-body: 'Inter', var(--font-sans), sans-serif;
+  --font-technical: 'Space Grotesk', var(--font-sans), sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: var(--color-navy-deep);
+    color: var(--color-pure-white);
+  }
+}
+
+/* Custom styles for professional smooth elements */
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 40%, var(--color-blue-ocean) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-electric {
+  background: linear-gradient(135deg, var(--color-blue-electric) 0%, var(--color-blue-ocean) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

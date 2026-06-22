@@ -1,0 +1,6 @@
+{
+  "name": "Signature Yacht Services",
+  "description": "Expert Yacht & Marine HVAC, Climate Management, and Commercial Refrigeration in Fort Lauderdale, Florida. Over 25 years of combined expert yacht mechanic experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
