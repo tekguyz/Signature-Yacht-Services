@@ -50,14 +50,6 @@ export const metadata: Metadata = {
     description:
       'Expert Marine HVAC & Refrigeration for yachts and commercial vessels. 24/7 dockside dispatch across South Florida.',
     siteName: 'Signature Yacht Services',
-    images: [
-      {
-        url: 'https://picsum.photos/seed/yacht-dockside-miami/1200/630',
-        width: 1200,
-        height: 630,
-        alt: 'Signature Yacht Services — Luxury Yacht HVAC & Climate Management',
-      },
-    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -65,11 +57,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Signature Yacht Services | Marine HVAC & Refrigeration',
     description: 'Expert dockside marine HVAC & refrigeration across South Florida. Available within 24 hours.',
-    images: ['https://picsum.photos/seed/yacht-dockside-miami/1200/630'],
-  },
-  icons: {
-    icon: 'https://picsum.photos/seed/anchor/32/32',
-    apple: 'https://picsum.photos/seed/anchor/180/180',
   },
 };
 

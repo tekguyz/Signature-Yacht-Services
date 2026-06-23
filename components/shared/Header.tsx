@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Anchor } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import LogoIcon from './LogoIcon';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +61,7 @@ export default function Header() {
             id="header-logo"
           >
             <div className="w-10 h-10 rounded-lg bg-blue-electric flex items-center justify-center text-pure-white transition-transform duration-300 group-hover:scale-110">
-              <Anchor className="w-5 h-5" />
+              <LogoIcon size={24} className="text-pure-white" />
             </div>
             <div className="flex flex-col">
               <span className="font-display text-xl md:text-2xl font-bold tracking-wider leading-none text-pure-white">
