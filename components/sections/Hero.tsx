@@ -25,18 +25,24 @@ export default function Hero() {
       aria-label="Hero — Signature Yacht Services"
       className="relative min-h-[100svh] lg:h-screen lg:min-h-[750px] flex flex-col bg-navy-deep overflow-hidden"
     >
-      {/* Background image */}
+      {/* Background image — Luxury mega-yacht profile */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <Image
-          src="https://picsum.photos/seed/yacht-dockside-miami/1920/1080"
-          alt=""
+          src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1920&q=80"
+          /* 
+             High-Quality Alternative Industry-Appropriate Images:
+             1. Luxury Mega-Yacht Profile: https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1920&q=80
+             2. Vessel Marina Floating Comfort: https://images.unsplash.com/photo-1621259182978-f09e5e2b07ae?auto=format&fit=crop&w=1920&q=80
+             3. Elite Yacht Dusk Harbor Comfort: https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1920&q=80
+          */
+          alt="Signature Yacht Services luxury yacht dockside"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-20"
+          className="object-cover object-center opacity-25"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/80 to-navy-deep" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/75 via-navy-deep/85 to-navy-deep" />
       </div>
 
       {/* Main content — occupies the entire viewport fold on mobile */}

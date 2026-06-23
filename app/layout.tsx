@@ -53,11 +53,28 @@ export const metadata: Metadata = {
     siteName: 'Signature Yacht Services',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://signatureyachtservices.vercel.app/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Signature Yacht Services — Luxury Yacht HVAC & Climate Management',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Signature Yacht Services | Marine HVAC & Refrigeration',
     description: 'Expert dockside marine HVAC & refrigeration across South Florida. Available within 24 hours.',
+    images: ['https://signatureyachtservices.vercel.app/opengraph-image'],
+  },
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon', type: 'image/png' },
+    ],
   },
 };
 

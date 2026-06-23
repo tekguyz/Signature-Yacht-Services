@@ -18,7 +18,7 @@ export default function Icon() {
         height="100%"
         viewBox="0 0 100 100"
         style={{
-          background: '#0a1628',
+          background: 'linear-gradient(135deg, #0066FF 0%, #0044CC 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -26,20 +26,29 @@ export default function Icon() {
           padding: '8%',
         }}
       >
-        <circle cx="50" cy="20" r="10" stroke="#0066FF" strokeWidth="8" fill="none" />
-        <line x1="50" y1="30" x2="50" y2="72" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" />
-        <line x1="30" y1="42" x2="70" y2="42" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" />
+        {/* Anchor Ring */}
+        <circle cx="50" cy="20" r="10" stroke="#FFFFFF" strokeWidth="8" fill="none" />
+        
+        {/* Anchor Shaft */}
+        <line x1="50" y1="30" x2="50" y2="72" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" />
+        
+        {/* Crossbar */}
+        <line x1="30" y1="42" x2="70" y2="42" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" />
+        
+        {/* Flukes */}
         <path
           d="M20 54 C20 78, 80 78, 80 54"
-          stroke="#0066FF"
+          stroke="#FFFFFF"
           strokeWidth="8"
           strokeLinecap="round"
           fill="none"
         />
+        
         {/* Left Arrowhead */}
-        <polyline points="12,46 20,54 28,46" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <polyline points="12,46 20,54 28,46" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        
         {/* Right Arrowhead */}
-        <polyline points="72,46 80,54 88,46" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <polyline points="72,46 80,54 88,46" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
       </svg>
     ),
     {
