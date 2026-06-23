@@ -13,7 +13,7 @@ export default function Image() {
     (
       <div
         style={{
-          background: 'linear-gradient(to bottom right, #0A1628, #050b14)',
+          background: '#0A1628',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -26,40 +26,38 @@ export default function Image() {
           border: '4px solid #0066FF',
         }}
       >
-        {/* Glow overlay */}
+        {/* Glow overlay without unsupported filter blur */}
         <div
           style={{
             position: 'absolute',
-            top: '-100px',
-            right: '-100px',
-            width: '450px',
-            height: '450px',
-            borderRadius: '50%',
-            background: 'rgba(0, 102, 255, 0.12)',
-            filter: 'blur(80px)',
+            top: '-150px',
+            right: '-150px',
+            width: '400px',
+            height: '400px',
+            borderRadius: '200px',
+            background: 'rgba(0, 102, 255, 0.15)',
           }}
         />
 
-        {/* Yacht Wireframe Anchor background decoration */}
+        {/* Yacht Wireframe Anchor background decoration using standard paths */}
         <div
           style={{
             position: 'absolute',
             bottom: '40px',
             right: '40px',
             opacity: 0.05,
-            color: '#0066FF',
             display: 'flex',
           }}
         >
           <svg width="280" height="280" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="20" r="10" stroke="currentColor" strokeWidth="6" />
-            <line x1="50" y1="30" x2="50" y2="72" stroke="currentColor" strokeWidth="7" />
-            <line x1="30" y1="42" x2="70" y2="42" stroke="currentColor" strokeWidth="6" />
-            <path d="M20 54 C20 78, 80 78, 80 54" stroke="currentColor" strokeWidth="7" fill="none" />
+            <circle cx="50" cy="20" r="10" stroke="#0066FF" strokeWidth="6" fill="none" />
+            <path d="M50 30 L50 72" stroke="#0066FF" strokeWidth="7" strokeLinecap="round" />
+            <path d="M30 42 L70 42" stroke="#0066FF" strokeWidth="6" strokeLinecap="round" />
+            <path d="M20 54 C20 78, 80 78, 80 54" stroke="#0066FF" strokeWidth="7" strokeLinecap="round" fill="none" />
           </svg>
         </div>
 
-        {/* Top Header Row */}
+        {/* Top Header Row with white custom LogoIcon */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div
             style={{
@@ -73,8 +71,55 @@ export default function Image() {
               marginRight: '20px',
             }}
           >
-            {/* Minimal white S monogram resembling our custom anchor curve */}
-            <span style={{ fontSize: '30px', fontWeight: 'bold', color: 'white' }}>S</span>
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Anchor Ring */}
+              <circle cx="50" cy="20" r="10" stroke="#FFFFFF" strokeWidth="6" fill="none" />
+              
+              {/* Anchor Shaft */}
+              <path d="M50 30 L50 72" stroke="#FFFFFF" strokeWidth="7" strokeLinecap="round" />
+              
+              {/* Crossbar */}
+              <path d="M30 42 L70 42" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
+              
+              {/* Thermometer temperature level alongside shaft */}
+              <path d="M42 48 L42 64" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
+              
+              {/* Curved Flukes */}
+              <path
+                d="M20 54 C20 78, 80 78, 80 54"
+                stroke="#FFFFFF"
+                strokeWidth="7"
+                strokeLinecap="round"
+                fill="none"
+              />
+              
+              {/* Left Fluke Arrowhead */}
+              <path
+                d="M20 56 L13 48 L27 48 Z"
+                fill="#FFFFFF"
+              />
+              
+              {/* Right Fluke Arrowhead */}
+              <path
+                d="M80 56 L73 48 L87 48 Z"
+                fill="#FFFFFF"
+              />
+              
+              {/* Climate Comfort Wave Overlay */}
+              <path
+                d="M32 82 Q41 76, 50 82 T68 82"
+                stroke="#FFFFFF"
+                strokeWidth="4"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span
@@ -118,7 +163,7 @@ export default function Image() {
           <div
             style={{
               fontSize: '58px',
-              fontWeight: 'black',
+              fontWeight: 800,
               lineHeight: 1.15,
               textTransform: 'uppercase',
               letterSpacing: '-1.5px',
