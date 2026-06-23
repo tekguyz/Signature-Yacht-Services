@@ -30,6 +30,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://signatureyachtservices.vercel.app'),
   title: 'Signature Yacht Services | Marine HVAC & Refrigeration — Fort Lauderdale',
   description:
     'Expert Marine HVAC & Refrigeration for yachts, sailboats, and commercial vessels across South Florida. 24/7 dockside dispatch. Call (954) 701-0752.',
@@ -66,6 +67,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${barlowCondensed.variable} ${inter.variable} ${spaceGrotesk.variable}`}
     >
+      <head>
+        <meta name="theme-color" content="#0A1628" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
       <body
         className="antialiased bg-navy-deep text-pure-white font-body"
         suppressHydrationWarning

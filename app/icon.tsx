@@ -13,23 +13,34 @@ export const contentType = 'image/png';
 export default function Icon() {
   return new ImageResponse(
     (
-      <div
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
         style={{
-          fontSize: 20,
-          background: '#0A1628',
-          width: '100%',
-          height: '100%',
+          background: '#0a1628',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#0066FF',
-          fontWeight: 'bold',
           borderRadius: '24%',
-          border: '1.5px solid #0066FF',
+          padding: '8%',
         }}
       >
-        S
-      </div>
+        <circle cx="50" cy="20" r="10" stroke="#0066FF" strokeWidth="8" fill="none" />
+        <line x1="50" y1="30" x2="50" y2="72" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" />
+        <line x1="30" y1="42" x2="70" y2="42" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" />
+        <path
+          d="M20 54 C20 78, 80 78, 80 54"
+          stroke="#0066FF"
+          strokeWidth="8"
+          strokeLinecap="round"
+          fill="none"
+        />
+        {/* Left Arrowhead */}
+        <polyline points="12,46 20,54 28,46" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        {/* Right Arrowhead */}
+        <polyline points="72,46 80,54 88,46" stroke="#0066FF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      </svg>
     ),
     {
       ...size,
