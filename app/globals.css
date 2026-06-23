@@ -2,37 +2,109 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-navy-deep: oklch(14.5% 0.046 253.9);      /* #0A1628 - Core Canvas & Rich Backdrops */
-  --color-navy-brand: oklch(29.8% 0.096 254.5);     /* #1B3A6B - Structural Panels & Deep Anchors */
-  --color-blue-electric: oklch(62.8% 0.25 250.3);   /* #1E90FF - High-Conversion CTAs & Primary Focus */
-  --color-blue-ocean: oklch(74.9% 0.21 230.1);      /* #00BFFF - Secondary Highlights, Badges & Hovers */
-  --color-ice-white: oklch(96.8% 0.015 240.2);      /* #F0F8FF - Soft Light Sections & Card Textures */
-  --color-pure-white: oklch(100% 0 0);              /* #FFFFFF - High Contrast Text Overlays */
-  --color-gold-accent: oklch(72.4% 0.15 84.5);      /* #C9A227 - Premium Trust Badges (Use Sparingly) */
-  
-  --font-display: 'Barlow Condensed', var(--font-sans), sans-serif;
-  --font-body: 'Inter', var(--font-sans), sans-serif;
+  /* Extracted pixel-perfect from official brand flyer */
+  --color-navy-deep:     oklch(19.2% 0.092 258.0);   /* #022150 - headline text, hero overlay, footer bg */
+  --color-navy-brand:    oklch(24.1% 0.098 258.5);   /* #002760 - footer bar, dark panel sections */
+  --color-blue-electric: oklch(40.8% 0.178 258.2);   /* #0042A2 - CTA buttons, price badge, "A WEEK" */
+  --color-blue-ocean:    oklch(50.2% 0.196 255.8);   /* #0073D6 - icon accents, checkmarks, hovers */
+  --color-ice-white:     oklch(96.2% 0.018 254.0);   /* #F4F4F6 - light section backgrounds */
+  --color-pure-white:    oklch(100% 0 0);             /* #FFFFFF - cards, text on dark */
+  --color-gold-accent:   oklch(50.2% 0.196 255.8);   /* no gold in brand - remapped to blue-ocean */
+
+  --font-display:   'Barlow Condensed', var(--font-sans), sans-serif;
+  --font-body:      'Inter', var(--font-sans), sans-serif;
   --font-technical: 'Space Grotesk', var(--font-sans), sans-serif;
 }
 
 @layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
     font-family: var(--font-body);
     background-color: var(--color-navy-deep);
     color: var(--color-pure-white);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    z-index: 9999;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-blue-electric);
+    color: #fff;
+    font-family: var(--font-technical);
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blue-ocean);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  ::selection {
+    background-color: var(--color-blue-electric);
+    color: #fff;
   }
 }
 
-/* Custom styles for professional smooth elements */
 .text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 40%, var(--color-blue-ocean) 100%);
+  background: linear-gradient(135deg, #ffffff 40%, var(--color-blue-ocean) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-gradient-electric {
   background: linear-gradient(135deg, var(--color-blue-electric) 0%, var(--color-blue-ocean) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (hover: hover) {
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-navy-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--color-navy-brand); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-blue-electric); }
 }

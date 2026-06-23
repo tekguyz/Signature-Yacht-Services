@@ -4,7 +4,6 @@ import Hero from '@/components/sections/Hero';
 import WhyChoose from '@/components/sections/WhyChoose';
 import Services from '@/components/sections/Services';
 import GroundSupport from '@/components/sections/GroundSupport';
-import SocialProof from '@/components/sections/SocialProof';
 import Contact from '@/components/sections/Contact';
 import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/sections/Footer';
@@ -30,9 +29,6 @@ export default function Home() {
 
         {/* S4: Standalone Ground Support Unit Rental Container */}
         <GroundSupport />
-
-        {/* S5: Social Proof Verification Banner */}
-        <SocialProof />
 
         {/* S7: Marine Climate FAQ Block - Render here preceding Form per user instruction */}
         <FAQ />

@@ -23,7 +23,6 @@ export default function Header() {
   const navLinks = [
     { name: 'Services', href: '#services' },
     { name: 'Ground Support', href: '#ground-support' },
-    { name: 'Testimonials', href: '#testimonials' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -47,8 +46,8 @@ export default function Header() {
         id="global-header"
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-navy-deep/95 backdrop-blur-md border-b border-white/10 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.4)]'
-            : 'bg-transparent py-5'
+            ? 'bg-navy-brand/95 backdrop-blur-md border-b border-white/10 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.4)]'
+            : 'bg-navy-brand/90 backdrop-blur-md border-b border-white/5 py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
@@ -67,7 +66,7 @@ export default function Header() {
               <span className="font-display text-xl md:text-2xl font-bold tracking-wider leading-none text-pure-white">
                 SIGNATURE
               </span>
-              <span className="font-technical text-[9px] md:text-[10px] tracking-widest text-blue-ocean font-semibold">
+              <span className="font-technical text-[9px] md:text-[10px] tracking-widest text-[#0066FF] font-semibold">
                 YACHT SERVICES
               </span>
             </div>
@@ -80,7 +79,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="font-technical text-sm text-gray-300 hover:text-blue-ocean transition-colors duration-200 tracking-wide focus:outline-none focus:text-blue-ocean"
+                className="font-technical text-sm text-gray-200 hover:text-blue-ocean transition-colors duration-200 tracking-wide focus:outline-none focus:text-blue-ocean"
                 id={`nav-${link.name.toLowerCase().replace(' ', '-')}`}
               >
                 {link.name}
@@ -120,7 +119,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-navy-deep/98 flex flex-col justify-between pt-24 pb-8 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-navy-brand/98 flex flex-col justify-between pt-24 pb-8 px-6 md:hidden"
             id="mobile-nav-panel"
           >
             {/* Nav list */}
@@ -164,7 +163,7 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={(e) => handleLinkClick(e, '#contact')}
-                className="w-full py-3.5 bg-navy-brand text-pure-white text-center font-technical font-semibold text-sm rounded-xl border border-white/10 focus:outline-none"
+                className="w-full py-3.5 bg-navy-brand border border-white/10 text-pure-white text-center font-technical font-semibold text-sm rounded-xl focus:outline-none"
                 id="mobile-menu-quote-cta"
               >
                 Request Free Quote

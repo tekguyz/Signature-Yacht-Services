@@ -62,31 +62,31 @@ export default function Services() {
     <div id="services-block" className="relative bg-navy-deep">
       
       {/* Decorative Wave Divider Transition - From dark navy deep to ice white background */}
-      <div className="text-ice-white relative z-10 -mb-1 bg-navy-deep">
-        <WaveDivider className="text-ice-white bg-navy-deep" />
+      <div className="relative z-10 -mb-1 bg-white">
+        <WaveDivider className="text-navy-deep bg-white" />
       </div>
 
       <section
         id="services"
-        className="bg-ice-white py-16 md:py-24 relative"
+        className="bg-navy-deep py-16 md:py-24 relative"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           
           {/* Framed Editorial Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
-            <span className="font-technical text-xs font-bold tracking-widest text-blue-electric uppercase bg-blue-electric/15 px-4 py-1.5 rounded-full inline-block">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            <span className="font-technical text-xs font-bold tracking-widest text-[#0066FF] uppercase bg-blue-electric/15 px-4 py-1.5 rounded-full inline-block">
               Full Marine Comfort Services
             </span>
             
-            <div className="flex items-center justify-center gap-4 mt-4">
-              <div className="h-px bg-blue-electric/35 w-12 hidden md:block" />
-              <h2 className="font-display text-4xl md:text-5xl font-black text-navy-deep tracking-tight uppercase">
+            <div className="flex items-center justify-center gap-4 mt-3">
+              <div className="h-px bg-white/10 w-12 hidden md:block" />
+              <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-black text-pure-white tracking-tight uppercase">
                 Our Services
               </h2>
-              <div className="h-px bg-blue-electric/35 w-12 hidden md:block" />
+              <div className="h-px bg-white/10 w-12 hidden md:block" />
             </div>
             
-            <p className="font-body text-slate-700 mt-4 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="font-body text-gray-300 mt-4 text-xs sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
               All-in-one comprehensive marine HVAC and refrigeration management. Providing expert technician expertise for Fort Lauderdale’s finest vessel classes.
             </p>
           </div>
@@ -100,30 +100,30 @@ export default function Services() {
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ delay: (idx % 3) * 0.1, duration: 0.5, ease: 'easeOut' }}
                 key={svc.title}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-[0_10px_30px_rgba(27,58,107,0.06)] hover:shadow-[0_15px_45px_rgba(27,58,107,0.12)] hover:-translate-y-1.5 transition-all duration-300 group"
+                className="bg-navy-brand/40 border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(0,0,0,0.2)] hover:border-blue-electric/30 hover:bg-navy-brand/60 hover:-translate-y-1.5 transition-all duration-300 group"
                 id={`service-card-${idx}`}
               >
                 <div>
                   {/* Service Icon with soft ocean layout */}
-                  <div className="w-12 h-12 rounded-xl bg-navy-brand/5 border border-navy-brand/10 text-navy-brand flex items-center justify-center p-3 mb-6 transition-all duration-300 group-hover:bg-blue-electric group-hover:text-pure-white group-hover:border-transparent">
+                  <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-blue-ocean flex items-center justify-center p-2.5 mb-5 transition-all duration-300 group-hover:bg-blue-electric group-hover:text-pure-white group-hover:border-transparent">
                     <svc.icon className="w-full h-full" />
                   </div>
 
-                  <div className="text-[11px] font-technical font-semibold tracking-wider text-blue-electric uppercase mb-1">
+                  <div className="text-[10px] font-technical font-semibold tracking-wider text-blue-ocean uppercase mb-1">
                     {svc.subtitle}
                   </div>
 
-                  <h3 className="font-display text-2xl font-bold text-navy-deep uppercase tracking-wide">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-pure-white uppercase tracking-wide">
                     {svc.title}
                   </h3>
 
-                  <p className="font-body text-slate-600 text-sm mt-3.5 leading-relaxed">
+                  <p className="font-body text-gray-300 text-xs sm:text-sm mt-3 leading-relaxed">
                     {svc.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
-                  <span className="font-technical text-[11px] font-medium text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+                  <span className="font-technical text-[11px] font-medium text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-electric" />
                     {svc.bullet}
                   </span>
@@ -143,7 +143,7 @@ export default function Services() {
                         serviceSelect.dispatchEvent(new Event('change', { bubbles: true }));
                       }
                     }}
-                    className="font-technical text-[11px] font-bold text-blue-electric hover:text-navy-brand uppercase tracking-widest transition-colors cursor-pointer"
+                    className="font-technical text-[11px] font-bold text-blue-ocean hover:text-pure-white uppercase tracking-widest transition-colors cursor-pointer"
                   >
                     Request →
                   </a>
@@ -156,14 +156,14 @@ export default function Services() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-navy-brand text-pure-white rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(10,22,40,0.2)] border border-white/5 relative overflow-hidden group"
+              className="bg-navy-brand text-pure-white rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-[0_15px_45px_rgba(0,0,0,0.3)] border border-white/10 relative overflow-hidden group"
               id="service-card-cta"
             >
               {/* Highlight backing glow */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-electric/25 rounded-full blur-2xl pointer-events-none" />
               
               <div>
-                <div className="w-12 h-12 rounded-xl bg-blue-electric flex items-center justify-center p-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-blue-electric flex items-center justify-center p-3 mb-6 shadow-[0_4px_15px_rgba(30,144,255,0.3)]">
                   <PhoneCall className="w-full h-full text-pure-white" />
                 </div>
                 
@@ -185,7 +185,7 @@ export default function Services() {
               <div className="mt-8">
                 <a
                   href="tel:954-701-0752"
-                  className="w-full py-3 bg-blue-electric hover:bg-opacity-95 transition-all text-pure-white font-technical text-xs font-bold rounded-lg uppercase tracking-wider text-center block shadow-md hover:scale-[1.02] active:scale-100"
+                  className="w-full py-4 bg-blue-electric text-pure-white font-technical text-xs font-bold rounded-lg border border-blue-ocean/30 shadow-[0_4px_18px_rgba(30,144,255,0.4)] hover:brightness-110 active:scale-[1.02] uppercase tracking-wider text-center block transition-all"
                 >
                   Call Out Emergency
                 </a>
@@ -196,8 +196,8 @@ export default function Services() {
       </section>
 
       {/* Wave bottom transition - Back to deep navy background */}
-      <div className="text-ice-white relative z-10 -mt-1 bg-navy-deep">
-        <WaveDivider flip className="text-ice-white bg-navy-deep" />
+      <div className="relative z-10 -mt-1 bg-navy-deep">
+        <WaveDivider flip className="text-slate-50 bg-navy-deep" />
       </div>
     </div>
   );

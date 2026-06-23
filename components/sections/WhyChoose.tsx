@@ -35,7 +35,7 @@ export default function WhyChoose() {
   return (
     <section
       id="why-choose-us"
-      className="py-16 md:py-24 bg-navy-brand relative overflow-hidden"
+      className="py-16 md:py-24 bg-white relative overflow-hidden border-t border-slate-100"
     >
       {/* Decorative ocean gradient blob */}
       <div className="absolute right-0 bottom-0 w-[400px] h-[400px] rounded-full bg-blue-electric/5 blur-[120px] pointer-events-none" />
@@ -44,15 +44,15 @@ export default function WhyChoose() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Subtle section structural header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-technical text-xs font-bold tracking-widest text-blue-ocean uppercase bg-blue-electric/10 px-3.5 py-1.5 rounded-full inline-block">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <span className="font-technical text-xs font-bold tracking-widest text-[#0066FF] uppercase bg-blue-electric/10 px-3.5 py-1.5 rounded-full inline-block">
             Proven Dockside Excellence
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-pure-white tracking-tight uppercase mt-4">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-black text-navy-brand tracking-tight uppercase mt-4">
             Why Signature Yacht Services Stands Apart
           </h2>
           <div className="w-20 h-1 bg-blue-electric mx-auto mt-4 rounded" />
-          <p className="font-body text-gray-300 mt-4 text-base md:text-lg">
+          <p className="font-body text-slate-600 mt-4 text-xs sm:text-base md:text-lg leading-relaxed">
             Serving South Florida’s elite maritime community with combined decades of rigorous engineering expertise and uncompromised client care.
           </p>
         </div>
@@ -66,24 +66,24 @@ export default function WhyChoose() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ delay: idx * 0.1, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               key={pillar.title}
-              className="bg-navy-deep/60 hover:bg-navy-deep/80 border border-white/5 hover:border-blue-ocean/20 rounded-xl p-6 md:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg hover:shadow-2xl hover:-translate-y-1.5"
+              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-blue-electric/40 rounded-xl p-6 md:p-8 flex flex-col justify-between transition-all duration-300 group shadow-[0_4px_15px_rgba(27,58,107,0.02)] hover:shadow-xl hover:-translate-y-1.5"
               id={`pillar-card-${idx}`}
             >
               <div>
                 {/* Icon wrapper with animated backing */}
-                <div className="w-14 h-14 rounded-xl bg-blue-electric/10 border border-blue-electric/15 text-blue-ocean flex items-center justify-center p-3 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-electric group-hover:text-pure-white">
+                <div className="w-14 h-14 rounded-xl bg-blue-electric/15 border border-blue-electric/10 text-[#0066FF] flex items-center justify-center p-3 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-electric group-hover:text-pure-white">
                   <pillar.icon className="w-full h-full" />
                 </div>
 
-                <div className="font-technical text-[10px] tracking-widest text-blue-ocean uppercase font-semibold mb-2">
+                <div className="font-technical text-[10px] tracking-widest text-[#0066FF] uppercase font-semibold mb-2">
                   {pillar.badge}
                 </div>
                 
-                <h3 className="font-display text-xl md:text-2xl font-bold text-pure-white uppercase tracking-wide">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-navy-brand uppercase tracking-wide">
                   {pillar.title}
                 </h3>
                 
-                <p className="font-body text-sm text-gray-400 mt-3 leading-relaxed">
+                <p className="font-body text-sm text-slate-600 mt-3 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>

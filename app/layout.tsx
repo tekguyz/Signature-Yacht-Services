@@ -1,31 +1,38 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Barlow_Condensed, Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 
-// Configure Barlow Condensed for Display
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-sans', // Overriding default sans for heading match
+  variable: '--font-sans',
+  display: 'swap',
 });
 
-// Configure Inter for Core Body
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-body',
+  display: 'swap',
 });
 
-// Configure Space Grotesk for Technical
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-technical',
+  display: 'swap',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0A1628',
+};
+
 export const metadata: Metadata = {
-  title: 'Signature Yacht Services | Fort Lauderdale Marine HVAC & Refrigeration',
-  description: 'Expert Marine HVAC & Refrigeration services for yachts, boats, and commercial vessels across South Florida. Available 24/7. Call 954-701-0752.',
+  title: 'Signature Yacht Services | Marine HVAC & Refrigeration — Fort Lauderdale',
+  description:
+    'Expert Marine HVAC & Refrigeration for yachts, sailboats, and commercial vessels across South Florida. 24/7 dockside dispatch. Call (954) 701-0752.',
   keywords: [
     'Yacht Air Conditioning',
     'Marine Refrigeration',
@@ -36,19 +43,19 @@ export const metadata: Metadata = {
     'South Florida Yacht Support',
   ],
   authors: [{ name: 'Signature Yacht Services' }],
-  alternates: {
-    canonical: '/',
-  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Signature Yacht Services | Fort Lauderdale Marine HVAC & Refrigeration',
-    description: 'Expert Marine HVAC & Refrigeration services for yachts, boats, and commercial vessels across South Florida. Available 24/7. Call 954-701-0752.',
+    title: 'Signature Yacht Services | Marine HVAC & Refrigeration — Fort Lauderdale',
+    description:
+      'Expert Marine HVAC & Refrigeration for yachts and commercial vessels. 24/7 dockside dispatch across South Florida.',
     siteName: 'Signature Yacht Services',
     images: [
       {
         url: 'https://picsum.photos/seed/yacht-dockside-miami/1200/630',
         width: 1200,
         height: 630,
-        alt: 'Signature Yacht Services - Luxury Yacht HVAC & Climate Management',
+        alt: 'Signature Yacht Services — Luxury Yacht HVAC & Climate Management',
       },
     ],
     locale: 'en_US',
@@ -57,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Signature Yacht Services | Marine HVAC & Refrigeration',
-    description: 'Expert dockside marine HVAC & refrigeration solutions across South Florida. available within 24 hours.',
+    description: 'Expert dockside marine HVAC & refrigeration across South Florida. Available within 24 hours.',
     images: ['https://picsum.photos/seed/yacht-dockside-miami/1200/630'],
   },
   icons: {
@@ -66,17 +73,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${barlowCondensed.variable} ${inter.variable} ${spaceGrotesk.variable}`}
     >
-      <body className="antialiased bg-navy-deep text-pure-white font-body selection:bg-blue-electric selection:text-pure-white" suppressHydrationWarning>
+      <body
+        className="antialiased bg-navy-deep text-pure-white font-body"
+        suppressHydrationWarning
+      >
+        {/* Skip-to-content for keyboard users */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>
