@@ -21,7 +21,7 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: '20%',
+          borderRadius: '6px',
           padding: '12%',
         }}
       >

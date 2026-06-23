@@ -23,7 +23,9 @@ export default function Image() {
           color: '#ffffff',
           fontFamily: 'sans-serif',
           position: 'relative',
-          border: '4px solid #0066FF',
+          borderWidth: '4px',
+          borderStyle: 'solid',
+          borderColor: '#0066FF',
         }}
       >
         {/* Glow overlay without unsupported filter blur */}
@@ -49,7 +51,13 @@ export default function Image() {
             display: 'flex',
           }}
         >
-          <svg width="280" height="280" viewBox="0 0 100 100" fill="none">
+          <svg
+            width="280"
+            height="280"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <circle cx="50" cy="20" r="10" stroke="#0066FF" strokeWidth="6" fill="none" />
             <path d="M50 30 L50 72" stroke="#0066FF" strokeWidth="7" strokeLinecap="round" />
             <path d="M30 42 L70 42" stroke="#0066FF" strokeWidth="6" strokeLinecap="round" />
@@ -127,7 +135,7 @@ export default function Image() {
                 fontSize: '28px',
                 fontWeight: 'bold',
                 letterSpacing: '2px',
-                lineHeight: 1,
+                lineHeight: '1',
               }}
             >
               SIGNATURE
@@ -137,7 +145,7 @@ export default function Image() {
                 fontSize: '11px',
                 letterSpacing: '4px',
                 color: '#0066FF',
-                fontWeight: 600,
+                fontWeight: '600',
                 marginTop: '3px',
               }}
             >
@@ -162,15 +170,16 @@ export default function Image() {
           </div>
           <div
             style={{
-              fontSize: '58px',
-              fontWeight: 800,
-              lineHeight: 1.15,
+              display: 'flex',
+              flexDirection: 'column',
+              fontSize: '56px',
+              fontWeight: 'bold',
+              lineHeight: '1.2',
               textTransform: 'uppercase',
               letterSpacing: '-1.5px',
             }}
           >
-            Maximum Yacht Comfort.
-            <br />
+            <span>Maximum Yacht Comfort.</span>
             <span style={{ color: '#0066FF' }}>Expert Climate Care.</span>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function AppleIcon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: '22%',
+          borderRadius: '36px',
           padding: '14%',
         }}
       >

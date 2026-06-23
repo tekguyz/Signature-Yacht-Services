@@ -67,14 +67,6 @@ export async function generateMetadata(): Promise<Metadata> {
       title: 'Signature Yacht Services | Marine HVAC & Refrigeration',
       description: 'Expert dockside marine HVAC & refrigeration across South Florida. Available within 24 hours.',
     },
-    icons: {
-      icon: [
-        { url: '/icon', type: 'image/png', sizes: '32x32' },
-      ],
-      apple: [
-        { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
-      ],
-    },
   };
 }
 
