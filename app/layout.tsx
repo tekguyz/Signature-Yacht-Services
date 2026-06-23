@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Barlow_Condensed, Inter, Space_Grotesk } from 'next/font/google';
+import { headers } from 'next/headers';
 import './globals.css';
 
 const barlowCondensed = Barlow_Condensed({
@@ -29,54 +30,53 @@ export const viewport: Viewport = {
   themeColor: '#0A1628',
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://signatureyachtservices.vercel.app'),
-  title: 'Signature Yacht Services | Marine HVAC & Refrigeration — Fort Lauderdale',
-  description:
-    'Expert Marine HVAC & Refrigeration for yachts, sailboats, and commercial vessels across South Florida. 24/7 dockside dispatch. Call (954) 701-0752.',
-  keywords: [
-    'Yacht Air Conditioning',
-    'Marine Refrigeration',
-    'Chilled Water Pipe Insulation',
-    'Marine Mold Remediation',
-    'Fort Lauderdale Yacht Service',
-    'Dockside AC Repair',
-    'South Florida Yacht Support',
-  ],
-  authors: [{ name: 'Signature Yacht Services' }],
-  robots: { index: true, follow: true },
-  alternates: { canonical: '/' },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const host = headersList.get('host') || 'signatureyachtservices.vercel.app';
+  // Check if we are running in local/sandbox environments or production secure environments
+  const protocol = host.includes('localhost') || host.includes('127.0.0.1') ? 'http' : 'https';
+  const siteUrl = `${protocol}://${host}`;
+
+  return {
+    metadataBase: new URL(siteUrl),
     title: 'Signature Yacht Services | Marine HVAC & Refrigeration — Fort Lauderdale',
     description:
-      'Expert Marine HVAC & Refrigeration for yachts and commercial vessels. 24/7 dockside dispatch across South Florida.',
-    siteName: 'Signature Yacht Services',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: 'https://signatureyachtservices.vercel.app/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'Signature Yacht Services — Luxury Yacht HVAC & Climate Management',
-      },
+      'Expert Marine HVAC & Refrigeration for yachts, sailboats, and commercial vessels across South Florida. 24/7 dockside dispatch. Call (954) 701-0752.',
+    keywords: [
+      'Yacht Air Conditioning',
+      'Marine Refrigeration',
+      'Chilled Water Pipe Insulation',
+      'Marine Mold Remediation',
+      'Fort Lauderdale Yacht Service',
+      'Dockside AC Repair',
+      'South Florida Yacht Support',
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Signature Yacht Services | Marine HVAC & Refrigeration',
-    description: 'Expert dockside marine HVAC & refrigeration across South Florida. Available within 24 hours.',
-    images: ['https://signatureyachtservices.vercel.app/opengraph-image'],
-  },
-  icons: {
-    icon: [
-      { url: '/icon', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/icon', type: 'image/png' },
-    ],
-  },
-};
+    authors: [{ name: 'Signature Yacht Services' }],
+    robots: { index: true, follow: true },
+    alternates: { canonical: '/' },
+    openGraph: {
+      title: 'Signature Yacht Services | Marine HVAC & Refrigeration — Fort Lauderdale',
+      description:
+        'Expert Marine HVAC & Refrigeration for yachts and commercial vessels. 24/7 dockside dispatch across South Florida.',
+      siteName: 'Signature Yacht Services',
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Signature Yacht Services | Marine HVAC & Refrigeration',
+      description: 'Expert dockside marine HVAC & refrigeration across South Florida. Available within 24 hours.',
+    },
+    icons: {
+      icon: [
+        { url: '/icon', type: 'image/png', sizes: '32x32' },
+      ],
+      apple: [
+        { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
+      ],
+    },
+  };
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
